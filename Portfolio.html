@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shrestha | AI, Software and Creative Experiments</title>
+<meta name="description" content="Portfolio of Shrestha, a Computer Science Engineering student building AI, software and creative projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#070a12;--panel:#0e1424;--tx:#eef2ff;--mu:#8e9ab5;--cy:#69f0f2;--bar:56px;--d:'Big Shoulders Display','Arial Narrow',Impact,sans-serif;--b:'Newsreader',Georgia,serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{background:var(--ink);color:var(--tx);font:400 clamp(1.05rem,1.4vw,1.25rem)/1.65 var(--b);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cy);outline-offset:4px}
+.fx{position:fixed;inset:0;pointer-events:none;z-index:50}
+.grain{opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vig{background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(0,0,0,.55))}
+.bar{position:fixed;left:0;right:0;z-index:60;background:#000;height:var(--bar);display:flex;align-items:center;gap:24px;padding:0 clamp(16px,4vw,48px);animation:open 1.8s cubic-bezier(.77,0,.18,1) both}
+.bar>*{animation:fade .6s 1.5s both}
+.bar.t{top:0;justify-content:space-between}
+.bar.b{bottom:0;font-size:.9rem;color:var(--mu);font-variant-numeric:tabular-nums}
+@keyframes open{from{height:50vh}to{height:var(--bar)}}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(.4em);filter:blur(8px)}}
+.mk{font:800 1.5rem var(--d);text-transform:uppercase;letter-spacing:.05em;text-decoration:none}
+.nav a{color:var(--mu);text-decoration:none;margin-left:clamp(14px,2.4vw,32px);font-size:.95rem;transition:color .25s}
+.nav a:hover{color:var(--tx)}
+.prog{flex:1;height:2px;background:rgba(255,255,255,.14)}
+.prog i{display:block;height:100%;background:var(--cy);transform-origin:0 50%;transform:scaleX(0)}
+#ch{min-width:9.5em;text-align:right}
+.pad{padding-left:clamp(20px,6vw,96px);padding-right:clamp(20px,6vw,96px)}
+.big{font:800 clamp(2.4rem,7vw,6rem)/.92 var(--d);text-transform:uppercase}
+.hero{min-height:100svh;display:grid;align-content:center;position:relative;overflow:hidden;padding-top:calc(var(--bar) + 6vh);padding-bottom:calc(var(--bar) + 4vh)}
+.hero:before{content:"";position:absolute;right:-8%;top:-25%;width:75vw;height:150%;background:linear-gradient(270deg,rgba(105,240,242,.2),transparent 75%);clip-path:polygon(100% 44%,0 0,0 100%,100% 56%);transform-origin:100% 50%;animation:sway 16s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-1.5deg)}to{transform:rotate(1.5deg)}}
+h1{position:relative;font:800 clamp(3.4rem,12.5vw,11.5rem)/.86 var(--d);text-transform:uppercase}
+h1 span{display:block;animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+h1 span:nth-child(1){animation-delay:1.7s}
+h1 span:nth-child(2){animation-delay:2s;color:transparent;-webkit-text-stroke:1.5px var(--tx)}
+.logline{position:relative;max-width:32ch;margin-top:clamp(20px,4vh,44px);color:#c4cde4;font-style:italic;animation:rise 1s 2.5s both}
+.cta{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:28px;animation:rise 1s 2.8s both}
+.btn{display:inline-block;padding:.75em 1.5em;border-radius:999px;background:var(--cy);color:#04141a;text-decoration:none;font-weight:500;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px -10px var(--cy)}
+.ln{text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:6px}
+.reel{height:calc(var(--k) * 100svh);position:relative}
+.stage{position:sticky;top:0;height:100svh;display:grid;align-content:center;overflow:hidden;padding-top:calc(var(--bar) + 4vh);padding-bottom:calc(var(--bar) + 4vh)}
+.stage h2{font-size:clamp(2rem,min(6vw,9vh),5rem);margin-bottom:clamp(12px,3vh,32px)}
+.read{font-size:clamp(1.1rem,min(2.6vw,3.6vh),2.6rem);line-height:1.3;max-width:34em;letter-spacing:-.01em}
+.read span{opacity:.16;filter:blur(1.5px);transition:opacity .5s,filter .5s}
+.read span.lit{opacity:1;filter:none}
+.facts{display:flex;flex-wrap:wrap;gap:8px 44px;margin-top:clamp(18px,4vh,48px);color:var(--mu);font-size:.95em;opacity:clamp(0,calc((var(--p) - .82) * 8),1)}
+.facts b{display:block;color:var(--tx);font-weight:500}
+.shot{grid-area:1/1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,72px);align-items:center;opacity:0;visibility:hidden;transform:translateY(30px) scale(.985);filter:blur(8px);transition:opacity .7s,transform .8s cubic-bezier(.2,.7,.2,1),filter .7s,visibility 0s .7s}
+.shot.on{opacity:1;visibility:visible;transform:none;filter:none;transition-delay:0s}
+.shot h3{font:800 clamp(2rem,min(6vw,9vh),5rem)/.92 var(--d);text-transform:uppercase;margin:6px 0 14px}
+.shot p{max-width:34em}
+.tags{margin-top:12px;color:hsl(var(--h,185) 85% 72%);font-style:italic}
+.note{margin-top:10px;color:var(--mu);font-size:.85em}
+.frame{aspect-ratio:2/1;border:1px solid rgba(255,255,255,.12);background:radial-gradient(60% 90% at 50% 50%,hsl(var(--h) 80% 50% / .3),transparent 70%),var(--panel);color:hsl(var(--h) 85% 70%);transform:scale(calc(1 + var(--p) * .06))}
+.frame svg{width:100%;height:100%;display:block}
+.ticks{position:absolute;right:clamp(8px,1.6vw,24px);top:50%;transform:translateY(-50%);display:grid;gap:10px;z-index:5}
+.ticks button{width:3px;height:24px;padding:0;border:0;border-radius:2px;background:rgba(255,255,255,.25);cursor:pointer;transition:.3s}
+.ticks button.on{height:44px;background:var(--cy)}
+.split{grid-template-columns:1fr 1fr;column-gap:clamp(20px,5vw,80px);align-items:center}
+.split h2{margin:0}
+.stack{display:grid}
+.shot.t{display:block}
+.shot.t h3{font-size:clamp(1.8rem,min(4.5vw,7vh),3.6rem)}
+.lab{padding-top:clamp(80px,16vh,180px);padding-bottom:clamp(80px,14vh,160px)}
+.lab h2{margin-bottom:clamp(28px,6vh,64px)}
+.cr{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(20px,4vw,64px);padding:.9rem 0;border-top:1px solid rgba(255,255,255,.08);opacity:.28;transition:opacity .5s}
+.cr.on{opacity:1}
+.cr dt{text-align:right;color:var(--mu)}
+.foot{margin-top:28px;color:var(--mu);font-size:.9rem;text-align:center}
+.fin{min-height:100svh;display:grid;align-content:center;padding-top:calc(var(--bar) + 8vh);padding-bottom:calc(var(--bar) + 8vh)}
+.fin .big{font-size:clamp(3rem,10vw,9rem);margin-bottom:24px}
+.fin p{max-width:30em}
+.fin .cta{animation:none}
+.end{padding-bottom:calc(var(--bar) + 24px);color:var(--mu);font-size:.9rem}
+@media(max-width:820px){.shot{grid-template-columns:1fr;gap:16px}.frame{order:-1;aspect-ratio:2.4/1}.shot p{font-size:.95rem;line-height:1.5}.split{grid-template-columns:1fr;row-gap:16px}.nav a:not(:nth-last-child(-n+2)){display:none}#ch{min-width:0}}
+@media(max-width:600px){.cr{grid-template-columns:1fr;gap:0}.cr dt{text-align:left}.facts{gap:6px 28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before{animation:none!important;transition:none!important}.reel{height:auto}.stage{position:static;height:auto;min-height:100svh}.shot{grid-area:auto;opacity:1;visibility:visible;transform:none;filter:none;margin-bottom:6vh}.stack{display:block}.read span{opacity:1;filter:none}.facts{opacity:1}.ticks{display:none}.cr{opacity:1}}
+</style>
+</head>
+<body>
+<div class="fx grain"></div><div class="fx vig"></div>
+<header class="bar t">
+<a class="mk" href="#top">Shrestha</a>
+<nav class="nav" aria-label="Chapters"><a href="#about">About</a><a href="#projects">Projects</a><a href="#lab">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav>
+</header>
+<div class="bar b" aria-hidden="true"><span id="tc">0:00</span><div class="prog"><i id="pr"></i></div><span id="ch">Title card</span></div>
+
+<main>
+<section class="hero pad" id="top" data-ch="Title card">
+<h1><span>Curious by nature.</span><span>Experimental by design.</span></h1>
+<p class="logline">I’m a Computer Science Engineering student exploring AI, automation, software and creative technology. This portfolio plays like a film.</p>
+<div class="cta"><a class="btn" href="#about">Begin the story</a></div>
+</section>
+
+<section class="reel" id="about" data-ch="The opening" style="--k:3.6">
+<div class="stage pad">
+<h2 class="big">Every idea starts with a question.</h2>
+<p class="read">I learn best by building, breaking, testing and improving ideas. I’m interested in how intelligent systems can make everyday tasks simpler, more accessible and more useful, so I experiment with emerging technologies and learn by building prototypes. Alongside code, video editing gives me a way to think about pacing, storytelling and visual communication. I’m looking to keep learning through collaborative projects, hackathons, internships and problems worth solving.</p>
+<div class="facts"><span>Education<b>B.Tech, Computer Science Engineering</b></span><span>University<b>Dayananda Sagar University</b></span><span>Based in<b>Bengaluru, India</b></span><span>Interests<b>AI, software, media</b></span></div>
+</div>
+</section>
+
+<section class="reel shots" id="projects" data-ch="The build-up" style="--k:5.2">
+<div class="stage pad">
+<article class="shot on" style="--h:185"><div><p class="tags">Featured, in development</p><h3>AEGIS</h3><p>An agentic Windows assistant concept combining voice interaction, AI reasoning, desktop automation, computer vision and accessibility features. The vision includes spatial memory for locating objects and a user-defined reminder system.</p><p class="tags">Python, FastAPI, React, Faster-Whisper, ONNX / YOLO, SQLite</p><p class="note">Prototype in development. Safety-critical and automotive ADAS capabilities remain research directions until validated.</p></div><div class="frame" data-art="wave" aria-hidden="true"></div></article>
+<article class="shot" style="--h:35"><div><p class="tags">Web project, culture and heritage</p><h3>Indian Heritage and Culture Web</h3><p>A website celebrating India’s rich cultural heritage, traditions, historical landmarks, art, festivals and diverse regional identities, built to make India’s stories and cultural knowledge engaging and accessible online.</p><p class="tags">Web development, Indian culture, digital storytelling</p></div><div class="frame" data-art="arch" aria-hidden="true"></div></article>
+<article class="shot" style="--h:210"><div><p class="tags">Research and exploration</p><h3>Moon Ice Water Detection</h3><p>A project exploration focused on lunar ice-water detection, connecting space-science questions with remote sensing and AI possibilities.</p><p class="tags">Research, remote sensing, AI exploration</p></div><div class="frame" data-art="moon" aria-hidden="true"></div></article>
+<article class="shot" style="--h:268"><div><p class="tags">Creative media</p><h3>Echoes of Lumiere</h3><p>Creative work around cinematography and visual storytelling, including an educational event concept covering camera angles, scene construction and recording techniques.</p><p class="tags">Cinematography, video editing, storytelling</p></div><div class="frame" data-art="lens" aria-hidden="true"></div></article>
+<article class="shot" style="--h:150"><div><p class="tags">Data and ML learning</p><h3>House Price Regression</h3><p>An academic machine-learning project exploring regression as a way to model relationships between features and predicted house prices.</p><p class="tags">Machine learning, regression, data analysis</p></div><div class="frame" data-art="reg" aria-hidden="true"></div></article>
+</div>
+</section>
+
+<section class="lab pad" id="lab" data-ch="The lab">
+<h2 class="big">Tools are only the beginning.</h2>
+<dl>
+<div class="cr"><dt>AI and ML</dt><dd>LLM integration, computer vision, regression concepts</dd></div>
+<div class="cr"><dt>Programming</dt><dd>Python, C, JavaScript/TypeScript</dd></div>
+<div class="cr"><dt>Web and APIs</dt><dd>React, Vite, FastAPI, WebSockets</dd></div>
+<div class="cr"><dt>Data and runtime</dt><dd>SQLite, SQLAlchemy, ONNX Runtime</dd></div>
+<div class="cr"><dt>Voice and interaction</dt><dd>Faster-Whisper, Edge-TTS, voice-first UX</dd></div>
+<div class="cr"><dt>Automation</dt><dd>Windows workflows, task routing, desktop tools</dd></div>
+<div class="cr"><dt>Video editing</dt><dd>DaVinci Resolve, Adobe Premiere Pro, CapCut</dd></div>
+<div class="cr"><dt>Creative thinking</dt><dd>Cinematography, visual storytelling, experimentation</dd></div>
+</dl>
+<p class="foot">A snapshot of my current learning and project work, not a claim of expert-level proficiency.</p>
+</section>
+
+<section class="reel shots" id="journey" data-ch="The unknown" style="--k:4.2">
+<div class="stage pad split">
+<h2 class="big">The hard part is what we haven’t solved yet.</h2>
+<div class="stack">
+<div class="shot t on"><h3>B.Tech in Computer Science Engineering</h3><p>Dayananda Sagar University, Bengaluru. Batch of 2029.</p></div>
+<div class="shot t"><h3>Building AEGIS</h3><p>Exploring an AI assistant that brings together voice, reasoning, desktop automation, computer vision and accessibility.</p></div>
+<div class="shot t"><h3>Exploring web and AI projects</h3><p>Learning through prototypes, academic projects, and experimentation with tools and frameworks.</p></div>
+<div class="shot t"><h3>Creative media and cinematography</h3><p>Developing editing skills and exploring how camera choices and visual storytelling shape a scene.</p></div>
+</div>
+</div>
+</section>
+
+<section class="fin pad" id="contact" data-ch="What comes next">
+<h2 class="big">The story is still being written.</h2>
+<p>Open to learning opportunities, collaborations, project teams and internships. The best experiments start with a conversation, so reach out about AI, software, creative projects or opportunities to collaborate.</p>
+<div class="cta"><a class="btn" href="mailto:trickynative32@gmail.com">Email me</a><a class="ln" href="https://github.com/shresthasrii">GitHub</a><a class="ln" href="https://www.linkedin.com/in/shrestha-srivastava-23085840a/">LinkedIn</a><a class="ln" href="https://www.instagram.com/trickynative_.editzzz/">Instagram</a></div>
+</section>
+<footer class="end pad">© 2026 Shrestha. Designed around curiosity, experimentation and building useful things.</footer>
+</main>
+
+<script>
+const $=(s,c=document)=>[...c.querySelectorAll(s)],rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const A={
+wave:()=>'<g fill="currentColor">'+Array.from({length:41},(_,i)=>{const h=10+78*Math.abs(Math.sin(i*.55)*Math.cos(i*.17));return`<rect x="${22+i*9}" y="${100-h/2}" width="3" height="${h}" rx="1.5"/>`}).join('')+'</g><circle cx="200" cy="100" r="88" fill="none" stroke="currentColor" opacity=".4"/>',
+arch:()=>[20,34,48,62].map(r=>`<path d="M${200-r} 185V100a${r} ${r} 0 0 1 ${2*r} 0V185" fill="none" stroke="currentColor" opacity="${.35+r/100}"/>`).join(''),
+moon:()=>'<circle cx="200" cy="100" r="82" fill="none" stroke="currentColor"/><g fill="none" stroke="currentColor" opacity=".45"><ellipse cx="160" cy="70" rx="22" ry="16"/><ellipse cx="228" cy="128" rx="30" ry="20"/><ellipse cx="236" cy="66" rx="12" ry="9"/></g><g fill="currentColor">'+[[222,124],[232,130],[238,122],[226,134],[244,128]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="2.4"/>`).join('')+'</g>',
+lens:()=>'<g fill="none" stroke="currentColor">'+Array.from({length:16},(_,i)=>{const a=i*Math.PI/8,c=Math.cos(a),s=Math.sin(a);return`<path d="M${200+c*34} ${100+s*34}L${200+c*92} ${100+s*92}" opacity=".5"/>`}).join('')+'<circle cx="200" cy="100" r="34"/><circle cx="200" cy="100" r="92" opacity=".5"/></g>',
+reg:()=>{let d='';for(let i=0;i<19;i++){const x=30+i*18,y=165-(x-30)*.4+Math.sin(i*3.7)*17;d+=`<circle cx="${x}" cy="${y.toFixed(1)}" r="3.2"/>`}return'<g fill="currentColor">'+d+'</g><path d="M30 165L370 29" stroke="currentColor" opacity=".5" fill="none" stroke-dasharray="4 5"/>'}};
+$('[data-art]').forEach(f=>f.innerHTML='<svg viewBox="0 0 400 200">'+A[f.dataset.art]()+'</svg>');
+$('.read').forEach(r=>{r._w=r.textContent.trim().split(/\s+/).map(w=>{const s=document.createElement('span');s.textContent=w;return s});r.textContent='';r._w.forEach((s,i)=>{if(i)r.append(' ');r.append(s)})});
+const reels=$('.reel');
+reels.forEach(s=>{const sh=$('.shot',s);if(sh.length<2||rm)return;const t=document.createElement('div');t.className='ticks';sh.forEach((_,j)=>{const b=document.createElement('button');b.setAttribute('aria-label','Go to scene '+(j+1));b.onclick=()=>scrollTo({top:s.getBoundingClientRect().top+scrollY+(j+.5)/sh.length*(s.offsetHeight-innerHeight)});t.append(b)});s.querySelector('.stage').append(t);s._t=[...t.children]});
+const fmt=n=>Math.floor(n/60)+':'+String(Math.floor(n%60)).padStart(2,'0'),tc=$('#tc')[0],pr=$('#pr')[0],ch=$('#ch')[0],secs=$('[data-ch]');let raf=0;
+function tick(){raf=0;const vh=innerHeight;
+if(!rm)reels.forEach(s=>{const r=s.getBoundingClientRect(),p=Math.min(1,Math.max(0,-r.top/(r.height-vh)));s.style.setProperty('--p',p.toFixed(3));
+const rd=$('.read',s)[0];if(rd){const k=p*1.12*rd._w.length;rd._w.forEach((w,i)=>w.classList.toggle('lit',i<k))}
+const sh=$('.shot',s);if(sh.length){const i=Math.min(sh.length-1,Math.floor(p*sh.length));if(s._i!==i){s._i=i;sh.forEach((e,j)=>e.classList.toggle('on',j===i));(s._t||[]).forEach((b,j)=>b.classList.toggle('on',j===i))}}});
+const g=scrollY/Math.max(1,document.documentElement.scrollHeight-vh);pr.style.transform=`scaleX(${g})`;tc.textContent=fmt(g*180);
+let c=secs[0];secs.forEach(s=>{if(s.getBoundingClientRect().top<vh*.5)c=s});ch.textContent=c.dataset.ch}
+addEventListener('scroll',()=>{raf||(raf=requestAnimationFrame(tick))},{passive:true});addEventListener('resize',tick);tick();
+const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('on',e.isIntersecting)),{rootMargin:'-42% 0px -42% 0px'});$('.cr').forEach(c=>io.observe(c));
+</script>
+</body>
+</html>
